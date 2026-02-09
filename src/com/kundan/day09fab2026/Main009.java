@@ -22,24 +22,40 @@ public class Main009 {
 //        }
 //        System.out.println("Majority element: "+candidate);
 
-        // print element with it highest frequency
-        int[] nums = {2,2,1,1,1,3,3,1,2,2,2,1,1,4,4,1,7,7,6};
+//        // print element with it highest frequency
+//        int[] nums = {2,2,1,1,1,3,3,1,2,2,2,1,1,4,4,1,7,7,6};
+//
+//        Map<Integer,Integer> frequencyMap = new HashMap<>();
+//        //count frequencies
+//        for(int num:nums) {
+//            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+//        }
+//
+//            int maxElement =Integer.MIN_VALUE;
+//            int maxFrequency =0;
+//
+//            for(Map.Entry<Integer,Integer> entry: frequencyMap.entrySet()){
+//                if(entry.getValue()>maxFrequency){
+//                    maxFrequency=entry.getValue();
+//                    maxElement = entry.getKey();
+//                }
+//            }
+//        System.out.println("maxElement : "+ maxElement+ " , have frequency: "+maxFrequency);
 
-        Map<Integer,Integer> frequencyMap = new HashMap<>();
-        //count frequencies
-        for(int num:nums) {
-            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
-        }
+        //find the longest common prefix among strings
+        /* Input : ["flower","flow","flight"]
+          Output : "fl"
+         */
 
-            int maxElement =Integer.MIN_VALUE;
-            int maxFrequency =0;
+        String[] strs ={"flower","flow","flight"};
 
-            for(Map.Entry<Integer,Integer> entry: frequencyMap.entrySet()){
-                if(entry.getValue()>maxFrequency){
-                    maxFrequency=entry.getValue();
-                    maxElement = entry.getKey();
-                }
+        String prefix = strs[0];
+
+        for(int i=1;i < strs.length; i++){
+            while (!strs[i].startsWith(prefix)){
+                prefix = prefix.substring(0,prefix.length()-1);
             }
-        System.out.println("maxElement : "+ maxElement+ " , have frequency: "+maxFrequency);
+        }
+        System.out.println(prefix);
     }
 }
