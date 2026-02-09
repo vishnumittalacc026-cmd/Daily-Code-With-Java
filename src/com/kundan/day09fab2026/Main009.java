@@ -1,22 +1,45 @@
 package com.kundan.day09fab2026;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main009 {
     public static void main(String[] args){
         //find element that appears more than n/2
         /* input : [2,2,1,1,1,2,2]
            Output : 2
          */
-        int[] nums ={2,2,1,1,1,2,2};
+//        int[] nums ={2,2,1,1,1,2,2};
+//
+//        int count =0;
+//        int candidate =0;
+//
+//        for(int num:nums){
+//            if(count ==0){
+//                candidate =num;
+//            }
+//            count += (num == candidate) ? 1: -1;
+//        }
+//        System.out.println("Majority element: "+candidate);
 
-        int count =0;
-        int candidate =0;
+        // print element with it highest frequency
+        int[] nums = {2,2,1,1,1,3,3,1,2,2,2,1,1,4,4,1,7,7,6};
 
-        for(int num:nums){
-            if(count ==0){
-                candidate =num;
-            }
-            count += (num == candidate) ? 1: -1;
+        Map<Integer,Integer> frequencyMap = new HashMap<>();
+        //count frequencies
+        for(int num:nums) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
         }
-        System.out.println("Majority element: "+candidate);
+
+            int maxElement =Integer.MIN_VALUE;
+            int maxFrequency =0;
+
+            for(Map.Entry<Integer,Integer> entry: frequencyMap.entrySet()){
+                if(entry.getValue()>maxFrequency){
+                    maxFrequency=entry.getValue();
+                    maxElement = entry.getKey();
+                }
+            }
+        System.out.println("maxElement : "+ maxElement+ " , have frequency: "+maxFrequency);
     }
 }
