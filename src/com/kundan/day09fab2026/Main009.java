@@ -1,5 +1,6 @@
 package com.kundan.day09fab2026;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,20 +43,44 @@ public class Main009 {
 //            }
 //        System.out.println("maxElement : "+ maxElement+ " , have frequency: "+maxFrequency);
 
-        //find the longest common prefix among strings
-        /* Input : ["flower","flow","flight"]
-          Output : "fl"
+//        //find the longest common prefix among strings
+//        /* Input : ["flower","flow","flight"]
+//          Output : "fl"
+//         */
+//
+//        String[] strs ={"flower","flow","flight"};
+//
+//        String prefix = strs[0];
+//
+//        for(int i=1;i < strs.length; i++){
+//            while (!strs[i].startsWith(prefix)){
+//                prefix = prefix.substring(0,prefix.length()-1);
+//            }
+//        }
+//        System.out.println(prefix);
+
+        //rotate array by k positions
+        /* input : [1,2,3,4,5,6,7]
+          output : [5,6,7,1,2,3,4]
          */
+        int[] arr = {1,2,3,4,5,6,7};
+        int k=3;
+        k= k % arr.length;
+        System.out.println("value of k :"+k);
 
-        String[] strs ={"flower","flow","flight"};
+        reverse(arr, 0,arr.length -1);
+        reverse(arr , 0 , k-1);
+        reverse(arr, k, arr.length-1);
 
-        String prefix = strs[0];
-
-        for(int i=1;i < strs.length; i++){
-            while (!strs[i].startsWith(prefix)){
-                prefix = prefix.substring(0,prefix.length()-1);
-            }
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void reverse(int[] arr, int l, int r){
+        while (l<r) {
+            int temp =arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            l++;
+            r--;
         }
-        System.out.println(prefix);
     }
 }
