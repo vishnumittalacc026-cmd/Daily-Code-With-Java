@@ -17,20 +17,37 @@ public class Main0013 {
 //        }
 //        System.out.println(map.values());
 
-        // sort hashmap by value
+//        // sort hashmap by value
+//
+//        Map<String,Integer> map = new HashMap<>();
+//        map.put("A",90);
+//        map.put("B",1);
+//        map.put("C",20);
+//        map.put("D",4);
+//
+//        List<Map.Entry<String,Integer>> list = new ArrayList<>(map.entrySet());
+//
+//        list.sort(Map.Entry.comparingByValue());
+//
+//        for(Map.Entry<String,Integer> entry:list){
+//            System.out.println(entry.getKey()+" "+entry.getValue());
+//        }
 
-        Map<String,Integer> map = new HashMap<>();
-        map.put("A",90);
-        map.put("B",1);
-        map.put("C",20);
-        map.put("D",4);
+        //two sum problem(using map)
 
-        List<Map.Entry<String,Integer>> list = new ArrayList<>(map.entrySet());
+        int[] nums ={2,7,11,15};
+        int target =9;
 
-        list.sort(Map.Entry.comparingByValue());
+        Map<Integer,Integer> map = new HashMap<>();
 
-        for(Map.Entry<String,Integer> entry:list){
-            System.out.println(entry.getKey()+" "+entry.getValue());
+        for(int i =0;i<nums.length;i++){
+            int diff = target - nums[i];
+
+            if(map.containsKey(diff)){
+                System.out.println("Indexes: "+map.get(diff)+", "+i);
+                return;
+            }
+            map.put(nums[i],i);
         }
     }
 }
