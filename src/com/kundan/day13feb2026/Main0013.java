@@ -33,21 +33,41 @@ public class Main0013 {
 //            System.out.println(entry.getKey()+" "+entry.getValue());
 //        }
 
-        //two sum problem(using map)
+//        //two sum problem(using map)
+//
+//        int[] nums ={2,7,11,15};
+//        int target =9;
+//
+//        Map<Integer,Integer> map = new HashMap<>();
+//
+//        for(int i =0;i<nums.length;i++){
+//            int diff = target - nums[i];
+//
+//            if(map.containsKey(diff)){
+//                System.out.println("Indexes: "+map.get(diff)+", "+i);
+//                return;
+//            }
+//            map.put(nums[i],i);
+//        }
+       //find maximum occurring character
 
-        int[] nums ={2,7,11,15};
-        int target =9;
+        String s ="programming";
 
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Character,Integer> map = new HashMap<>();
 
-        for(int i =0;i<nums.length;i++){
-            int diff = target - nums[i];
-
-            if(map.containsKey(diff)){
-                System.out.println("Indexes: "+map.get(diff)+", "+i);
-                return;
-            }
-            map.put(nums[i],i);
+        for(char c: s.toCharArray()){
+            map.put(c,map.getOrDefault(c,0)+1);
         }
+
+        char maxChar =' ';
+        int maxCount =0;
+
+        for(Map.Entry<Character,Integer> entry:map.entrySet()){
+            if(entry.getValue()>maxCount){
+                maxCount =entry.getValue();
+                maxChar=entry.getKey();
+            }
+        }
+        System.out.println("max occuring character: "+maxChar);
     }
 }
