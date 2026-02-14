@@ -1,6 +1,7 @@
 package com.kundan.day14feb2026;
 
 import java.util.List;
+import java.util.PrimitiveIterator;
 import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -52,5 +53,19 @@ public class Main14 {
 //        Supplier<Integer> randomSupplier = () -> new Random().nextInt(200);
 //    System.out.println(randomSupplier.get());
 //    System.out.println(randomSupplier.get());
+
+//        List<String> names = List.of("vishnu","amit","ravi","ankit");
+//
+//        Predicate<String> startWithA = name -> name.startsWith("A");
+//        Function<String,Integer> length = name ->name.length();
+//        Consumer<Integer> print = len -> System.out.println(len);
+//        Supplier<String> defaultName = () -> "unknown";
+//
+//        names.stream()
+//                .filter(startWithA)
+//                .map(length)
+//                .forEach(print);
+//
+//        System.out.println(defaultName.get());
     }
 }
