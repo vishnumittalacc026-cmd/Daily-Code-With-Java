@@ -1,6 +1,7 @@
 package com.kundan.day14feb2026;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Main14 {
@@ -14,12 +15,20 @@ public class Main14 {
 //        System.out.println(isEven.test(12));
 //        System.out.println(isEven.test(9));
 
-        // filter using predicate with stream
+//        // filter using predicate with stream
+//
+//        List<Integer> numbers = List.of(10,15,20,11,16,21);
+//
+//        numbers.stream()
+//                .filter(n-> n>20)
+//                .forEach(System.out::println);
 
-        List<Integer> numbers = List.of(10,15,20,11,16,21);
+        // Functional Method
+        // takes one input and return one output
+        // R apply(T t)
 
-        numbers.stream()
-                .filter(n-> n>20)
-                .forEach(System.out::println);
+        Function<String,Integer> lengthFunction = s -> s.length();
+        System.out.println(lengthFunction.apply("java"));
+        System.out.println(lengthFunction.apply("Spring"));
     }
 }
