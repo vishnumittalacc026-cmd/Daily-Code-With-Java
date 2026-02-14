@@ -1,6 +1,7 @@
 package com.kundan.day14feb2026;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.PrimitiveIterator;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -67,5 +68,12 @@ public class Main14 {
 //                .forEach(print);
 //
 //        System.out.println(defaultName.get());
+
+        // optional
+//        Optional<String> name = Optional.empty();
+//        System.out.println(name.orElseGet(()->"Default Name"));
+//
+//        Optional<String> anotherName = Optional.of("Alice");
+//        System.out.println(anotherName.orElseGet(()-> "default name"));
     }
 }
