@@ -16,9 +16,16 @@ public class Main16 {
 //                .forEach(System.out::println);
 
         // sot list of strings a
-        List<String> names = Arrays.asList("rohit","amit","vishnu");
+//        List<String> names = Arrays.asList("rohit","amit","vishnu");
+//
+//        names.sort((a,b) -> a.compareTo(b));
+//        System.out.println(names);
 
-        names.sort((a,b) -> a.compareTo(b));
-        System.out.println(names);
+        List<String> list =Arrays.asList("Amit","vishnu","ankit","raju");
+
+        long count = list.stream()
+                .filter(s -> s.startsWith("A"))
+                .count();
+        System.out.println(count);
     }
 }
