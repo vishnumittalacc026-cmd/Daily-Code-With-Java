@@ -34,10 +34,20 @@ public class Main16 {
 //                .distinct()
 //                .forEach(System.out::println);
 
-        List<Integer> list = Arrays.asList(10,2,1);
+//        List<Integer> list = Arrays.asList(10,2,1);
+//
+//        int sum = list.stream()
+//                .reduce(0,(a,b)->a+b);
+//        System.out.println(sum);
 
-        int sum = list.stream()
-                .reduce(0,(a,b)->a+b);
-        System.out.println(sum);
+        List<Integer> list = Arrays.asList(1,9,2,8,4,3,6,5,10,11);
+
+        int secondHighest = list.stream()
+                .distinct()
+                .sorted((a,b) -> b-a)
+                .skip(1)
+                .findFirst()
+                .get();
+        System.out.println(secondHighest);
     }
 }
