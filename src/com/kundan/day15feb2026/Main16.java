@@ -53,11 +53,18 @@ public class Main16 {
 //                .get();
 //        System.out.println(secondHighest);
 
-        List<String> list = Arrays.asList("java","spring","api","code","restapi");
+//        List<String> list = Arrays.asList("java","spring","api","code","restapi");
+//
+//        Map<Integer,List<String>> result =
+//                list.stream()
+//                        .collect(Collectors.groupingBy(s->s.length()));
+//        System.out.println(result);
 
-        Map<Integer,List<String>> result =
-                list.stream()
-                        .collect(Collectors.groupingBy(s->s.length()));
-        System.out.println(result);
+        List<Integer> list = Arrays.asList(1,9,1,2,9,2,8,4,3,6,5,10,11);
+
+        list.stream()
+                .filter(n->Collections.frequency(list,n)>1)
+                .distinct()
+                .forEach(System.out::println);
     }
 }
