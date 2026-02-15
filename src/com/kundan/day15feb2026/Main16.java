@@ -21,11 +21,17 @@ public class Main16 {
 //        names.sort((a,b) -> a.compareTo(b));
 //        System.out.println(names);
 
-        List<String> list =Arrays.asList("Amit","vishnu","ankit","raju");
+//        List<String> list =Arrays.asList("Amit","vishnu","ankit","raju");
+//
+//        long count = list.stream()
+//                .filter(s -> s.startsWith("A"))
+//                .count();
+//        System.out.println(count);
 
-        long count = list.stream()
-                .filter(s -> s.startsWith("A"))
-                .count();
-        System.out.println(count);
+        List<Integer> list = Arrays.asList(1,1,2,2,2,2,5,4,3,7,8,9);
+
+        list.stream()
+                .distinct()
+                .forEach(System.out::println);
     }
 }
