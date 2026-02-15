@@ -28,10 +28,16 @@ public class Main16 {
 //                .count();
 //        System.out.println(count);
 
-        List<Integer> list = Arrays.asList(1,1,2,2,2,2,5,4,3,7,8,9);
+//        List<Integer> list = Arrays.asList(1,1,2,2,2,2,5,4,3,7,8,9);
+//
+//        list.stream()
+//                .distinct()
+//                .forEach(System.out::println);
 
-        list.stream()
-                .distinct()
-                .forEach(System.out::println);
+        List<Integer> list = Arrays.asList(10,2,1);
+
+        int sum = list.stream()
+                .reduce(0,(a,b)->a+b);
+        System.out.println(sum);
     }
 }
