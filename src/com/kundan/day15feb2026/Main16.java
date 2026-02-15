@@ -60,11 +60,20 @@ public class Main16 {
 //                        .collect(Collectors.groupingBy(s->s.length()));
 //        System.out.println(result);
 
-        List<Integer> list = Arrays.asList(1,9,1,2,9,2,8,4,3,6,5,10,11);
+//        List<Integer> list = Arrays.asList(1,9,1,2,9,2,8,4,3,6,5,10,11);
+//
+//        list.stream()
+//                .filter(n->Collections.frequency(list,n)>1)
+//                .distinct()
+//                .forEach(System.out::println);
 
-        list.stream()
-                .filter(n->Collections.frequency(list,n)>1)
-                .distinct()
-                .forEach(System.out::println);
+        List<Integer> list = Arrays.asList(1,2,3,4,5,1,9,7,10);
+
+        int max = list.stream()
+                .max((a,b)-> a.compareTo(b))
+                .get();
+        System.out.println("Max: "+max);
+
+
     }
 }
