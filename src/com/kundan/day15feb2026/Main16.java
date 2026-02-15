@@ -14,5 +14,11 @@ public class Main16 {
 //        list.stream()
 //                .filter(n -> n%2 ==0)
 //                .forEach(System.out::println);
+
+        // sot list of strings a
+        List<String> names = Arrays.asList("rohit","amit","vishnu");
+
+        names.sort((a,b) -> a.compareTo(b));
+        System.out.println(names);
     }
 }
