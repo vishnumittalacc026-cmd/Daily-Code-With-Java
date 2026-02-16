@@ -22,25 +22,40 @@ public class Main16 {
 //        return -1;
 //    }
 
-    public static int firstUniChar(String s){
-        int[] freq = new int[26];
+//    public static int firstUniChar(String s){
+//        int[] freq = new int[26];
+//
+//        for(char ch:s.toCharArray()){
+//            freq[ch - 'a']++;
+//        }
+//
+//        for (int i=0;i<s.length();i++){
+//            if(freq[s.charAt(i)-'a']==1){
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
 
-        for(char ch:s.toCharArray()){
-            freq[ch - 'a']++;
+    public static boolean isPalindrome(String s, int start,int end){
+        if(start >= end){
+            return true;
         }
-
-        for (int i=0;i<s.length();i++){
-            if(freq[s.charAt(i)-'a']==1){
-                return i;
-            }
+        if(s.charAt(start) != s.charAt(end)){
+            return false;
         }
-        return -1;
+        return isPalindrome(s,start+1,end-1);
     }
     public static void main(String[] args){
-        String s = "loveleetcode";
+//        String s = "loveleetcode";
+//
+//        int a = firstUniChar(s);
+//
+//        System.out.println(s.charAt(a));
 
-        int a = firstUniChar(s);
+        String s="madam";
 
-        System.out.println(s.charAt(a));
+        boolean result = isPalindrome(s,0,s.length()-1);
+        System.out.println(result);
     }
 }
