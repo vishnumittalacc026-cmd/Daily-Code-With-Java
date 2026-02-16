@@ -37,14 +37,28 @@ public class Main16 {
 //        return -1;
 //    }
 
-    public static boolean isPalindrome(String s, int start,int end){
-        if(start >= end){
+//    public static boolean isPalindrome(String s, int start,int end){
+//        if(start >= end){
+//            return true;
+//        }
+//        if(s.charAt(start) != s.charAt(end)){
+//            return false;
+//        }
+//        return isPalindrome(s,start+1,end-1);
+//    }
+
+    public static boolean isPalindrome(String s){
+        s = s.toLowerCase().replaceAll("[^a-z0-9]","");
+        return check(s,0,s.length()-1);
+    }
+    private static boolean check(String s,int start,int end){
+        if(start >= end)
             return true;
-        }
-        if(s.charAt(start) != s.charAt(end)){
+        if (s.charAt(start) != s.charAt(end)){
             return false;
         }
-        return isPalindrome(s,start+1,end-1);
+
+        return check(s,start+1,end-1);
     }
     public static void main(String[] args){
 //        String s = "loveleetcode";
@@ -53,9 +67,9 @@ public class Main16 {
 //
 //        System.out.println(s.charAt(a));
 
-        String s="madam";
+        String s="A man, a plan, a canal: Panama";
 
-        boolean result = isPalindrome(s,0,s.length()-1);
+        boolean result = isPalindrome(s);
         System.out.println(result);
     }
 }
