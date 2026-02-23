@@ -1,5 +1,6 @@
 package com.kundan.day23feb2026;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -9,14 +10,23 @@ public class Main023 {
     public static void main(String[] args){
         String input = "Programming in java";
 
-        Map<Character,Long> frequency =
-                input.chars()
-                        .mapToObj(c->(char)c)
-                        .collect(Collectors.groupingBy(
-                                Function.identity(),
-                                LinkedHashMap::new,
-                                Collectors.counting()
-                        ));
+//        Map<Character,Long> frequency =
+//                input.chars()
+//                        .mapToObj(c->(char)c)
+//                        .collect(Collectors.groupingBy(
+//                                Function.identity(),
+//                                LinkedHashMap::new,
+//                                Collectors.counting()
+//                        ));
+//        System.out.println(frequency);
+
+        // 2nd approach
+        Map<Character,Integer> frequency = new LinkedHashMap<>();
+
+        for (char c:input.toCharArray()){
+            frequency.put(c,frequency.getOrDefault(c,0)+1);
+        }
+
         System.out.println(frequency);
     }
 }
