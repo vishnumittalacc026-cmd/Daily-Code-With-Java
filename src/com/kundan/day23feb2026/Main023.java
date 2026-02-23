@@ -20,13 +20,32 @@ public class Main023 {
 //                        ));
 //        System.out.println(frequency);
 
-        // 2nd approach
+//        // 2nd approach
+//        Map<Character,Integer> frequency = new LinkedHashMap<>();
+//
+//        for (char c:input.toCharArray()){
+//            frequency.put(c,frequency.getOrDefault(c,0)+1);
+//        }
+//
+//        System.out.println(frequency);
+
+        // 3rd approach
         Map<Character,Integer> frequency = new LinkedHashMap<>();
 
-        for (char c:input.toCharArray()){
-            frequency.put(c,frequency.getOrDefault(c,0)+1);
-        }
+        char[] chars = input.toCharArray();
 
-        System.out.println(frequency);
+        for(int i=0;i<chars.length;i++){
+            char c = chars[i];
+
+            //checking condition if the character is already present in the given map(frequency)
+            if(frequency.containsKey(c)){
+                int count = frequency.get(c);
+                frequency.put(c,count+1);
+            } else {
+                frequency.put(c,1);
+            }
+
+        }
+            System.out.println(frequency);
     }
 }
