@@ -29,23 +29,23 @@ public class Main023 {
 //
 //        System.out.println(frequency);
 
-        // 3rd approach
-        Map<Character,Integer> frequency = new LinkedHashMap<>();
-
-        char[] chars = input.toCharArray();
-
-        for(int i=0;i<chars.length;i++){
-            char c = chars[i];
-
-            //checking condition if the character is already present in the given map(frequency)
-            if(frequency.containsKey(c)){
-                int count = frequency.get(c);
-                frequency.put(c,count+1);
-            } else {
-                frequency.put(c,1);
-            }
-
-        }
-            System.out.println(frequency);
+//        // 3rd approach
+//        Map<Character,Integer> frequency = new LinkedHashMap<>();
+//
+//        char[] chars = input.toCharArray();
+//
+//        for(int i=0;i<chars.length;i++){
+//            char c = chars[i];
+//
+//            //checking condition if the character is already present in the given map(frequency)
+//            if(frequency.containsKey(c)){
+//                int count = frequency.get(c);
+//                frequency.put(c,count+1);
+//            } else {
+//                frequency.put(c,1);
+//            }
+//
+//        }
+//            System.out.println(frequency);
     }
 }
