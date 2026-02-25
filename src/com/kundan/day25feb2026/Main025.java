@@ -26,25 +26,35 @@ public class Main025 {
 //            }
 //        }
 
-        //3rd approach
-        //pre-size list to avoid resizing overhead
-        List<Integer> evens = new ArrayList<>(list.size()/2);
-        List<Integer> odds = new ArrayList<>(list.size()/2);
+//        //3rd approach
+//        //pre-size list to avoid resizing overhead
+//        List<Integer> evens = new ArrayList<>(list.size()/2);
+//        List<Integer> odds = new ArrayList<>(list.size()/2);
+//
+//        //bitwise check in loop
+//        for(int n:list){
+//            if((n&1)==0){
+//                {
+//                    evens.add(n);
+//                }
+//            } else {
+//                odds.add(n);
+//            }
+//        }
+//
+//        Map<Boolean,List<Integer>> result=new HashMap<>(2);
+//        result.put(Boolean.TRUE,evens);
+//        result.put(Boolean.FALSE,odds);
 
-        //bitwise check in loop
-        for(int n:list){
-            if((n&1)==0){
-                {
-                    evens.add(n);
-                }
-            } else {
-                odds.add(n);
-            }
-        }
+        //4th approach
+        Map<String,List<Integer>> result =list.stream()
+                .collect(Collectors.groupingBy(n->{
+                    if(n%2 ==0) return "EvenList: ";
+                    else if(n%3==0) return " Divisible by 3: ";
+                    else return " OddList: ";
+                }));
+        // Time taken in millisecond: 10ms
 
-        Map<Boolean,List<Integer>> result=new HashMap<>(2);
-        result.put(Boolean.TRUE,evens);
-        result.put(Boolean.FALSE,odds);
 
         //End time
         long endTime = System.nanoTime();
