@@ -8,8 +8,8 @@ public class Main024 {
         //Start time
         long startTime = System.nanoTime();
 
-        List<Integer> list1 = Arrays.asList(1,2,3,4,5);
-        List<Integer> list2 = Arrays.asList(3,4,5,6,7);
+        List<Integer> list1 = Arrays.asList(1,2,3,4,5,1,2,7,8,6,9,0,10,11,22,12,13,14,15,16,17,18,19);
+        List<Integer> list2 = Arrays.asList(3,4,5,6,7,0,16,17,12,13,20,21,22);
 
 //        List<Integer> common = list1.stream()
 //                .filter(list2::contains)
