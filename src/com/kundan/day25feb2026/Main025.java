@@ -108,7 +108,7 @@ public class Main025 {
         //calculate time duration in millisecond
         long durationInMilliSecond = (endTime-startTime)/1_000_000;
 
-        System.out.println(result);
+        System.out.println("Result:"+result);
         System.out.println("Time taken in millisecond: "+durationInMilliSecond+"ms");
     }
 }
