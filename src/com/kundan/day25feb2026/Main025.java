@@ -1,16 +1,58 @@
 package com.kundan.day25feb2026;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main025 {
     public static void main(String[] args){
+        //Start Time
+        long startTime = System.nanoTime();
+
         List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9);
 
-        Map<Boolean,List<Integer>> finalResult = list.stream()
-                .collect(Collectors.partitioningBy(n -> n%2==0));
-        System.out.println(finalResult);
+//        Map<Boolean,List<Integer>> result = list.stream()
+//                .collect(Collectors.partitioningBy(n -> n%2==0));
+
+//        // 2nd approach
+//        Map<Boolean,List<Integer>> result = new HashMap<Boolean,List<Integer>>();
+//        result.put(true,new ArrayList<Integer>());
+//        result.put(false,new ArrayList<Integer>());
+//
+//        for(Integer n:list){
+//            if(n%2==0){
+//                result.get(true).add(n);
+//            } else {
+//                result.get(false).add(n);
+//            }
+//        }
+
+        //3rd approach
+        //pre-size list to avoid resizing overhead
+        List<Integer> evens = new ArrayList<>(list.size()/2);
+        List<Integer> odds = new ArrayList<>(list.size()/2);
+
+        //bitwise check in loop
+        for(int n:list){
+            if((n&1)==0){
+                {
+                    evens.add(n);
+                }
+            } else {
+                odds.add(n);
+            }
+        }
+
+        Map<Boolean,List<Integer>> result=new HashMap<>(2);
+        result.put(Boolean.TRUE,evens);
+        result.put(Boolean.FALSE,odds);
+
+        //End time
+        long endTime = System.nanoTime();
+
+        //calculate time duration in millisecond
+        long durationInMilliSecond = (endTime-startTime)/1_000_000;
+
+        System.out.println(result);
+        System.out.println("Time taken in millisecond: "+durationInMilliSecond+"ms");
     }
 }
