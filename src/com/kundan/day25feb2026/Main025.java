@@ -46,15 +46,33 @@ public class Main025 {
 //        result.put(Boolean.TRUE,evens);
 //        result.put(Boolean.FALSE,odds);
 
-        //4th approach
-        Map<String,List<Integer>> result =list.stream()
-                .collect(Collectors.groupingBy(n->{
-                    if(n%2 ==0) return "EvenList: ";
-                    else if(n%3==0) return " Divisible by 3: ";
-                    else return " OddList: ";
-                }));
-        // Time taken in millisecond: 10ms
+//        //4th approach
+//        Map<String,List<Integer>> result =list.stream()
+//                .collect(Collectors.groupingBy(n->{
+//                    if(n%2 ==0) return "EvenList: ";
+//                    else if(n%3==0) return " Divisible by 3: ";
+//                    else return " OddList: ";
+//                }));
+//        // Time taken in millisecond: 10ms
 
+        //5th approach
+        Map<String,List<Integer>> result = new HashMap<>();
+        result.put("Even:",new ArrayList<>());
+        result.put("Odd:",new ArrayList<>());
+        result.put("Divisible by 3:",new ArrayList<>());
+
+        for(Integer n:list){
+            if(n%2==0){
+                result.get("Even:").add(n);
+            }
+            if(n%2 !=0){
+                result.get("Odd:").add(n);
+            }
+            if(n%3==0){
+                result.get("Divisible by 3:").add(n);
+            }
+        }
+        //Time taken in millisecond: 0ms
 
         //End time
         long endTime = System.nanoTime();
