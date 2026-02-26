@@ -11,10 +11,23 @@ public class Main026 {
         long startTimer = System.nanoTime();
 
         List<String> words = Arrays.asList("java","go","c#","c","c++","Rust","python","javascript");
+        //1st approach
+//        Optional<String> longest = words.stream()
+//                .max(Comparator.comparingInt(String::length));
+//
+//        longest.ifPresent(System.out::println);
+        //second approach
+        String longest = null;
+        for(String word:words){
+            if(longest==null || word.length()>longest.length()){
+                longest=word;
+            }
+        }
 
-        Optional<String> longest = words.stream()
-                .max(Comparator.comparingInt(String::length));
-        longest.ifPresent(System.out::println);
+        if(longest!=null){
+            System.out.println("longest string: "+longest);
+        }
+        //Total time duration of program execution 1 ms
 
         //End timer
         long endTimer =System.nanoTime();
@@ -23,6 +36,6 @@ public class Main026 {
         long durationInMilliSecond = (endTimer-startTimer)/1_000_000;
 
         //printing the output of program
-        System.out.println("Total time duration of program execution "+durationInMilliSecond);
+        System.out.println("Total time duration of program execution "+durationInMilliSecond+" ms");
     }
 }
