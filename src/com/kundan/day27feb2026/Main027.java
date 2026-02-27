@@ -1,8 +1,7 @@
 package com.kundan.day27feb2026;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main027 {
@@ -24,14 +23,34 @@ public class Main027 {
 //        }
 //        System.out.println(sum);
 
-        //Removing Duplicate String from list
-        List<String> list = Arrays.asList("orange","apple","apple","cherry","papaya");
+//        //Removing Duplicate String from list
+//        List<String> list = Arrays.asList("orange","apple","apple","cherry","papaya");
+//
+//        List<String> finalResult= list.stream()
+//                .distinct()
+//                .collect(Collectors.toList());
+//
+//        System.out.println(finalResult);
 
-        List<String> finalResult= list.stream()
-                .distinct()
-                .collect(Collectors.toList());
 
-        System.out.println(finalResult);
+//        List<String> list = Arrays.asList("orange","apple","apple","cherry","cherry");
+//
+//        Set<String> set = new LinkedHashSet<>(list);
+//
+//        List<String> unique = new ArrayList<>(set);
+//        System.out.println(unique);
+//        //Time taken: 1ms
+
+          List<String> list = Arrays.asList("orange","apple","apple","cherry","cherry");
+
+          List<String> unique= new ArrayList<>();
+
+          for(String fruit:list){
+              if(!unique.contains(fruit)){
+                  unique.add(fruit);
+              }
+          }
+          System.out.println(unique);
 
         //end timer
         long endingTime = System.nanoTime();
