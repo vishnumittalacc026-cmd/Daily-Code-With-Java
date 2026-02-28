@@ -5,33 +5,45 @@ public class Main028 {
         //Start_timer
         long startTimer= System.nanoTime();
 
-        String word = "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis" +
-                "pneumonoultramicroscopicsilicovolcanoconiosis";
-        String reversed_word= new StringBuilder(word)
+//        String word = "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis" +
+//                "pneumonoultramicroscopicsilicovolcanoconiosis";
+//        String reversed_word= new StringBuilder(word)
+//                .reverse()
+//                .toString();
+//        System.out.println(reversed_word);
+
+        char[] chars =new char[10_000_000];
+        java.util.Arrays.fill(chars,'A');
+        String word = new String(chars);
+
+        String reversedWord = new StringBuilder(word)
                 .reverse()
-                .toString();
-        System.out.println(reversed_word);
+                        .toString();
+
+        System.out.println("word length: "+word.length());
+        System.out.println(reversedWord);
+        //Total time: 262 ms
 
         //end_timer
         long endTimer = System.nanoTime();
