@@ -9,7 +9,7 @@ public class MainM001 {
         //Start timer
         long startTimer = System.nanoTime();
 //        String input = "java8";
-        int length =100_000_000;
+        int length =1_000_000_000;
         Random random = new Random();
         StringBuilder sb= new StringBuilder(length);
 
@@ -26,15 +26,23 @@ public class MainM001 {
             }
             sb.append(c);
         }
-        String input = sb.toString();
-        String reversed = IntStream.rangeClosed(1,input.length())
-                .mapToObj(i->input.charAt(input.length()-i))
-                .map(String::valueOf)
-                .collect(Collectors.joining());
-        System.out.println(reversed);
-        //total time for program execution: 283 for 1_000_000 character
+//        String input = sb.toString();
+//        String reversed = IntStream.rangeClosed(1,input.length())
+//                .mapToObj(i->input.charAt(input.length()-i))
+//                .map(String::valueOf)
+//                .collect(Collectors.joining());
+//        System.out.println(reversed);
+//        //total time for program execution: 283 for 1_000_000 character
         //total time for program execution: 732 for 10_000_000 character
         //total time for program execution: 5486 for 100_000_000 character
+
+        //for one billion i am using StringBuilder reverse method
+
+        sb.reverse();
+        String reversed= sb.toString();
+        System.out.println(reversed);
+
+        //total time for program execution: 40420 for one billion character
 
         //end timer
         long endTimer = System.nanoTime();
