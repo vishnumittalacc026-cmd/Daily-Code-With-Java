@@ -20,18 +20,34 @@ public class MainM004 {
 //        //Program time: 4 ms when Comparator.reverseOrder() used
 //        //Program time: 5 ms when lambda method used
 
-        Collections.sort(numbers, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer a, Integer b) {
-                return b.compareTo(a);
-            }
-        });
+//        Collections.sort(numbers, new Comparator<Integer>() {
+//            @Override
+//            public int compare(Integer a, Integer b) {
+//                return b.compareTo(a);
+//            }
+//        });
+//
+//        Integer secondHighestNumber = null;
+//        if(numbers.size()>1){
+//            secondHighestNumber = numbers.get(1);
+//        }
+//        System.out.println( "second highest number is: "+secondHighestNumber);
 
-        Integer secondHighestNumber = null;
-        if(numbers.size()>1){
-            secondHighestNumber = numbers.get(1);
+        //Single Pass Approach(without sorting)
+        Integer largest = Integer.MIN_VALUE;
+        Integer secondLargest = Integer.MIN_VALUE;
+
+        for(Integer num:numbers){
+            if(num>largest){
+                secondLargest = largest;
+                largest = num;
+            } else if (num>secondLargest && num<largest) {
+                secondLargest =num;
+            }
         }
-        System.out.println( "second highest number is: "+secondHighestNumber);
+
+        System.out.println(secondLargest);
+        //Program time: 0 ms
 
         //End timer
         long endTimer = System.nanoTime();
