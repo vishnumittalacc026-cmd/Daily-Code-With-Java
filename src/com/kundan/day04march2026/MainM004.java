@@ -46,7 +46,7 @@ public class MainM004 {
             }
         }
 
-        System.out.println(secondLargest);
+        System.out.println("second largest number is: "+secondLargest);
         //Program time: 0 ms
 
         //End timer
