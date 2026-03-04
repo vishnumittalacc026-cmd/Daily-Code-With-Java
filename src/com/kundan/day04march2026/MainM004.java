@@ -31,7 +31,7 @@ public class MainM004 {
         if(numbers.size()>1){
             secondHighestNumber = numbers.get(1);
         }
-        System.out.println(secondHighestNumber);
+        System.out.println( "second highest number is: "+secondHighestNumber);
 
         //End timer
         long endTimer = System.nanoTime();
