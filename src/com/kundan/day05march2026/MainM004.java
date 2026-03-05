@@ -27,26 +27,38 @@ public class MainM004 {
 //        System.out.println(sorted);
 //        //Program Time: 18 millisecond for small data set
 
-        //second approach by using loop
+//        //second approach by using loop
+//
+//        //convert map to list
+//        List<Map.Entry<String,Integer>> entryList = new ArrayList<>(map.entrySet());
+//        //sort
+//        Collections.sort(entryList, new Comparator<Map.Entry<String, Integer>>() {
+//            @Override
+//            public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+//                return e1.getValue().compareTo(e2.getValue());
+//            }
+//        });
+//
+//        //insert sorted entries to linked hashmap
+//        Map<String,Integer> sortedMap = new LinkedHashMap<>();
+//        for(Map.Entry<String,Integer> entry:entryList){
+//            sortedMap.put(entry.getKey(),entry.getValue());
+//        }
+//        System.out.println(sortedMap);
+//        //Program Time: 2 millisecond for small data set
 
-        //convert map to list
-        List<Map.Entry<String,Integer>> entryList = new ArrayList<>(map.entrySet());
-        //sort
-        Collections.sort(entryList, new Comparator<Map.Entry<String, Integer>>() {
-            @Override
-            public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
-                return e1.getValue().compareTo(e2.getValue());
-            }
-        });
-
-        //insert sorted entries to linked hashmap
-        Map<String,Integer> sortedMap = new LinkedHashMap<>();
-        for(Map.Entry<String,Integer> entry:entryList){
-            sortedMap.put(entry.getKey(),entry.getValue());
-        }
+        // using parallel stream features of java 8
+        Map<String,Integer> sortedMap = map.entrySet()
+                .parallelStream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1,e2) -> e1,
+                        LinkedHashMap::new
+                ));
         System.out.println(sortedMap);
-        //Program Time: 2 millisecond for small data set
-
+        //Program Time: 57 millisecond for small data set
 
         //end timer
         long endTimer =System.nanoTime();
