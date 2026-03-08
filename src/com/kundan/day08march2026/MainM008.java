@@ -13,12 +13,12 @@ public class MainM008 {
         List<String> upperCase = words.stream()
                 .map(String::toUpperCase)
                 .collect(Collectors.toList());
-        System.out.println(upperCase);
+        System.out.println("upper case words:"+upperCase);
         //end timer
         long endTimer = System.nanoTime();
 
         //program time
         long programTime =(endTimer-startTimer)/1_000_000;
-        System.out.println("Progrm time: "+programTime);
+        System.out.println("Program time: "+programTime+" ms");
     }
 }
