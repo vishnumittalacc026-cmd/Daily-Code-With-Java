@@ -1,6 +1,7 @@
 package com.kundan.day11march2026;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -13,8 +14,9 @@ public class MainM011 {
         int[] nums = {1,1,1,1,1,9,9,9,9,1,2,2,2,2,2,2,3,3,8,6};
         int k=4;
 
-        List<Integer> result =
-                Arrays.stream(nums)
+        //List<Integer> result =
+        Map<Integer,Long> result=
+        Arrays.stream(nums)
                         .boxed()
                         .collect(Collectors.groupingBy(
                                 Function.identity(),
@@ -23,8 +25,13 @@ public class MainM011 {
                         .stream()
                         .sorted(Map.Entry.<Integer,Long>comparingByValue().reversed())
                         .limit(k)
-                        .map(Map.Entry::getKey)
-                        .collect(Collectors.toList());
+                        //.map(Map.Entry::getKey)
+//                        .collect(Collectors.toList());
+                        .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (e1,e2)->e1,
+                LinkedHashMap::new));
         System.out.println(result);
 
         //End Timer
