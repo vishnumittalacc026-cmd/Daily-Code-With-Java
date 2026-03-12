@@ -1,5 +1,8 @@
 package com.kundan.day12march2026;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Application001 {
     public static void main(String[] args) throws InterruptedException {
         //Start Timer
@@ -13,13 +16,28 @@ public class Application001 {
 //        } catch (InterruptedException e){
 //            e.printStackTrace();
 //        }
-        //Creating Virtual Thread using Thread.ofVirtual()
-        Thread thread = Thread.ofVirtual()
-                .name("My-Virtual-Thread")
-                .start(()->{
-                    System.out.println(Thread.currentThread());
+//        //Creating Virtual Thread using Thread.ofVirtual()
+//        Thread thread = Thread.ofVirtual()
+//                .name("My-Virtual-Thread")
+//                .start(()->{
+//                    System.out.println(Thread.currentThread());
+//                });
+//        thread.join();
+
+        //Virtual Thread Executor(Recommended)
+        try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()){
+            for(int i=1;i<=10;i++){
+                int task =i;
+
+                executor.submit(()->{
+                    System.out.println(
+                            "Task "+task+
+                                    " executed by "+
+                                    Thread.currentThread()
+                    );
                 });
-        thread.join();
+            }
+        }
 
         //End Timer
         long endTimer = System.nanoTime();
