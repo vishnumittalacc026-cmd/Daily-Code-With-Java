@@ -1,5 +1,6 @@
 package com.kundan.day12march2026;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -18,12 +19,19 @@ Output:
         List<String> words = Arrays.asList("mat","bat","fat","chat","eat","tea","tan","ate","nat","bat");
 
         Map<String,List<String>> result = words.stream()
-                .collect(Collectors.groupingBy(word -> {
+                .collect(Collectors.groupingBy(word ->{
                     char[] chars = word.toCharArray();
                     Arrays.sort(chars);
                     return new String(chars);
                 }));
-        System.out.println(result.values());
+        //System.out.println(result.values());
+//        result.forEach((key,value)->
+//                System.out.println(key+ " "+value)
+//        );
+//        for(Map.Entry<String,List<String>> entry:result.entrySet()){
+//            System.out.println(entry.getKey()+" "+entry.getValue());
+//        }
+        System.out.println(result);
         //End Timer
         long endTimer = System.nanoTime();
 
