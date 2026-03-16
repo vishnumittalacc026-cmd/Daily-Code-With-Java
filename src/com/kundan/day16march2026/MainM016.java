@@ -25,8 +25,9 @@ public class MainM016 {
         //start timer
         long startTimer = System.nanoTime();
         int[] nums = {1,1,1,2,2,3,3,3,3,3,4,4,2};
+        int k =2;
 
-        System.out.println(topK(nums,2));
+        System.out.println(topK(nums,k));
         //end timer
         long endTimer = System.nanoTime();
         //program time
