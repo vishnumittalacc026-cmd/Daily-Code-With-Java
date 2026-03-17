@@ -11,8 +11,8 @@ public class MainM017 {
         cache.put(3,11);
         cache.get(1);
         cache.put(4,12);
-//        cache.put(5,13);
-//        cache.put(6,14);
+        cache.put(5,13);
+        cache.put(6,14);
 
         System.out.println(cache);
         //end timer
