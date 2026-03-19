@@ -1,9 +1,7 @@
 package com.kundan.day19march2026;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MainM019 {
     public static String secondLongestSubstring(String s){
@@ -19,12 +17,26 @@ public class MainM019 {
             set.add(s.charAt(right));
             substrings.add(s.substring(left,right+1));
         }
-        //sort substrings by length(descending), then remove duplicates
-        List<String> uniqueSorted = substrings.stream()
+        //group substring by length sort length
+        Map<Integer,List<String>> grouped = substrings.stream()
                 .distinct()
-                .sorted((a,b)->Integer.compare(b.length(),a.length()))
-                .toList();
-        return uniqueSorted.size()>1?uniqueSorted.get(1):"";
+                .collect(Collectors.groupingBy(String::length));
+//        //sort substrings by length(descending), then remove duplicates
+//        List<String> uniqueSorted = substrings.stream()
+//                .distinct()
+//                .sorted((a,b)->Integer.compare(b.length(),a.length()))
+//                .toList();
+
+//        return uniqueSorted.size()>1?uniqueSorted.get(1):"";
+        List<Integer> lengths = grouped.keySet().stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+        if (lengths.size() < 2) return "";
+        // Get the second largest length
+        int secondLength = lengths.get(1);
+
+        // Return the first substring of that length
+        return grouped.get(secondLength).get(0);
     }
     public static void main(String[] args){
         //start timer
