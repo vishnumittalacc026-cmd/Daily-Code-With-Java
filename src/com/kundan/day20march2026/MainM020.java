@@ -24,7 +24,7 @@ public class MainM020 {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        System.out.println(isValid("()[]{}"));
+        System.out.println("Pairing of the parentheses is: "+isValid("()[]{}"));
         //end timer
         long endTimer = System.nanoTime();
         //program time
