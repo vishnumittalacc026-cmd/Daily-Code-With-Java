@@ -25,13 +25,13 @@ public class MainM022 {
 
         System.out.println("Has cycle (expected false): " + hasCycle(node1));
 
-        // Example 2: List with a cycle
+
         ListNode node4 = new ListNode(4);
         ListNode node5 = new ListNode(5);
         ListNode node6 = new ListNode(6);
         node4.next = node5;
         node5.next = node6;
-        node6.next = node4; // cycle here
+        node6.next = node4;
 
         System.out.println("Has cycle (expected true): " + hasCycle(node4));
 
