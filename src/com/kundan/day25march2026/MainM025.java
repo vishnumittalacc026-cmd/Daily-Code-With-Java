@@ -20,15 +20,25 @@ public class MainM025 {
 //        System.out.printf("Average: %.2f%n",avg);
 
         //using parallel stream for small dataset
-        List<Integer> smallList = IntStream.rangeClosed(1,1000).boxed().toList();
+        //List<Integer> smallList = IntStream.rangeClosed(1,1000).boxed().toList();
 
-        double avgSmallParallel =smallList
+//        double avgSmallParallel =smallList
+//                .parallelStream()
+//                .mapToInt(Integer::intValue)
+//                .average()
+//                .orElse(0);
+//        System.out.println("Smalldataset parallelstream: "+avgSmallParallel);
+        //Program Time: 34 ms for small dataset
+
+        List<Integer> largeList = IntStream.rangeClosed(1,10_000_000).boxed().toList();
+
+        double avgLargeParallel = largeList
                 .parallelStream()
                 .mapToInt(Integer::intValue)
                 .average()
                 .orElse(0);
-        System.out.println("Smalldataset parallelstream: "+avgSmallParallel);
-        //Program Time: 34 ms for small dataset
+        System.out.println("large dataset parallelstream: "+avgLargeParallel);
+        //Program Time: 675 ms for large dataset 10 million
         //end timer
         long endTimer = System.nanoTime();
 
