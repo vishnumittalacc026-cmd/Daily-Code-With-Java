@@ -16,14 +16,29 @@ public class MainM026 {
     }
 
     //contains duplicate
-    public static boolean containsDuplicate(int[] nums){
+//    public static boolean containsDuplicate(int[] nums){
+//        Set<Integer> set = new HashSet<>();
+//        for(int num : nums){
+//            if(!set.add(num))
+//                return true;
+//        }
+//        return false;
+//    }
+
+    //use containsDuplicate as instance method of MainM026 class
+    //in that you can avoid using static keyword
+    // you can directly call the method in the main method.
+    public boolean containsDuplicate(int[] nums){
         Set<Integer> set = new HashSet<>();
-        for(int num : nums){
-            if(!set.add(num))
+
+        for(int num: nums){
+            if(!set.add(num)){
                 return true;
+            }
         }
         return false;
     }
+
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
@@ -33,11 +48,19 @@ public class MainM026 {
 //        System.out.println("Max Profit (prices1): "+maxProfit(prices1));
 //        System.out.println("Max Profit (prices2): "+maxProfit(prices2));
 
-        int[] num1 = {1,2,3,4};
+//        int[] num1 = {1,2,3,4};
+//        int[] num2 = {1,2,3,1};
+//
+//        System.out.println(containsDuplicate(num1));
+//        System.out.println(containsDuplicate(num2));
+
+        MainM026 object = new MainM026();
+        int[]num1  = {1,2,3,4};
         int[] num2 = {1,2,3,1};
 
-        System.out.println(containsDuplicate(num1));
-        System.out.println(containsDuplicate(num2));
+        System.out.println(object.containsDuplicate(num1));
+        System.out.println(object.containsDuplicate(num2));
+
 //        //end timer
         long endTimer = System.nanoTime();
         //program time
