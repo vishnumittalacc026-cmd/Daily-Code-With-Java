@@ -36,6 +36,6 @@ public class MainM028 {
         //program time
         long programTime= (endTime-startTime)/1_000_000;
 
-        System.out.println("Program Time: "+programTime+" ms");
+        System.out.println("Program Time: "+programTime+" millisecond");
     }
 }
