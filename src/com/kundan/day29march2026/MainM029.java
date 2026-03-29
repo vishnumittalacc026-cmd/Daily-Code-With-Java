@@ -28,6 +28,6 @@ public class MainM029 {
         long endTimer = System.nanoTime();
         //program time
         long programTime = (endTimer-startTimer)/1_000_000;
-        System.out.println("Program time: "+programTime+" ms");
+        System.out.println("Program time: "+programTime+" millisecond");
     }
 }
