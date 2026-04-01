@@ -25,6 +25,8 @@ public class MainApr001 {
         System.out.println(checker.isAnagram("listen","silent"));
         System.out.println(checker.isAnagram("triangle","integral"));
         System.out.println(checker.isAnagram("apple","pale"));
+        System.out.println(checker.isAnagram("night","thing"));
+
 
         //end timer
         long endTimer = System.nanoTime();
