@@ -39,7 +39,10 @@ public class MainApr003 {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-
+        MainApr003 solver = new MainApr003();
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        System.out.println("Minimum window substring: " + solver.minWindow(s, t));
         //end timer
         long endTimer = System.nanoTime();
 
