@@ -22,11 +22,21 @@ public class MainApr015 {
     public static void main(String[] args){
         // start time
         long startTimer = System.nanoTime();
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next= new Node(4);
-        head.next.next.next.next = new Node(5);
+//        Node head = new Node(1);
+//        head.next = new Node(2);
+//        head.next.next = new Node(3);
+//        head.next.next.next= new Node(4);
+//        head.next.next.next.next =
+
+        int[] values = {1,2,3,4,5,6,7,8};
+        Node head = new Node(values[0]);
+        Node current = head;
+
+        for(int i = 1; i< values.length; i++)
+        {
+            current.next = new Node(values[i]);
+            current = current.next;
+        }
 
         System.out.println("original List: ");
         printList(head);
