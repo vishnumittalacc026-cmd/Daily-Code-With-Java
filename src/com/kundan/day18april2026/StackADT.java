@@ -33,5 +33,16 @@ public class StackADT<T> {
     public boolean isEmpty(){
         return stack.isEmpty();
     }
-
+    // print all element in the stack
+    public void printStack(){
+        if(isEmpty()){
+            System.out.println("Stack is empty ");
+        } else {
+            System.out.println("Stack elements: ");
+            for(T item : stack){
+                System.out.print(item+" ");
+            }
+            System.out.println();
+        }
+    }
 }
