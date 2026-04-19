@@ -34,4 +34,11 @@ public class ArrayQueue {
             if (size==0) return -1;
             return arr[front];
     }
+
+    boolean isEmpty(){
+        return size == 0;
+    }
+    boolean isFull(){
+        return size==capacity;
+    }
 }
