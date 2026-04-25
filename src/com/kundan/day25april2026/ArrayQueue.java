@@ -10,16 +10,20 @@ public class ArrayQueue {
     }
 
     void enqueue(int x) {
-        if (size == capacity)
+        if (isFull()) {
+            System.out.println("queue is full. cannot enqueue "+x);
             return;
+        }
         rear = (rear + 1) % capacity;
         arr[rear] = x;
         size++;
     }
 
     int dequeue() {
-        if (size == 0)
+        if (isEmpty()) {
+            System.out.println("Queue is empty. cannot dequeue");
             return -1;
+        }
         int val = arr[front];
         front = (front + 1) % capacity;
         size--;
@@ -54,7 +58,7 @@ public class ArrayQueue {
         }
         System.out.println("queue element: ");
         for (int i = 0; i < size; i++) {
-            System.out.println(arr[(front + 1) % capacity] + " ");
+            System.out.print(arr[(front + i) % capacity] + " ");
         }
         System.out.println();
     }
