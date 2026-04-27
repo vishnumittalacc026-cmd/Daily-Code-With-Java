@@ -4,7 +4,19 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        QueueLL q = new QueueLL();
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
 
+        System.out.println("queue elements: ");
+        q.display();
+
+        System.out.println("Dequeued: "+q.dequeue());
+        System.out.println("Front element: "+q.peek());
+
+        q.display();
+        System.out.println("Is queue empty? "+q.isEmpty());
         //end timer
         long endTimer = System.nanoTime();
 
