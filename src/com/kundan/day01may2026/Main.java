@@ -7,6 +7,7 @@ public class Main {
         Thread.startVirtualThread(()->{
             System.out.println("helo kd from: "+Thread.currentThread());
         });
+
         //end timer
         long endTimer = System.nanoTime();
 
