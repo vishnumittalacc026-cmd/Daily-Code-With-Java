@@ -4,7 +4,9 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-
+        Thread.startVirtualThread(()->{
+            System.out.println("helo kd from: "+Thread.currentThread());
+        });
         //end timer
         long endTimer = System.nanoTime();
 
