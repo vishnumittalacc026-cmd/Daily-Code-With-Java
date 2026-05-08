@@ -79,7 +79,6 @@ public class Main {
 
                     System.out.println("IP Address: "+addr.getHostAddress());
                 }
-                System.out.println("-------------------------------");
             }
         } catch (Exception e){
             e.printStackTrace();
@@ -90,6 +89,6 @@ public class Main {
         //program time
         long programTime = (endTimer-startTimer)/1_000_000;
 
-        System.out.print("program time: "+programTime+" millisecond");
+        System.out.print("program time: "+programTime+" ms");
     }
 }
