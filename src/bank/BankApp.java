@@ -6,8 +6,7 @@ public class BankApp {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         BankService bank = new BankService();
-        //start timer
-        long startTimer = System.nanoTime();
+
         while (true){
             System.out.println("=====Mini Bank======");
             System.out.println("1. Create Account");
@@ -59,12 +58,5 @@ public class BankApp {
                 System.out.println("Error: "+e.getMessage());
             }
         }
-        //end timer
-        long endTimer = System.nanoTime();
-
-        //program time
-        long programTime = (endTimer-startTimer)/1_000_000;
-
-        System.out.println("program time: "+programTime+" ms");
     }
 }
