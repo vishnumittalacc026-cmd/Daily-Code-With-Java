@@ -25,7 +25,7 @@ public class Account {
             throw new RuntimeException("Insufficient Balance!");
         }
         balance -= amount;
-        transactions.add(new Tranaction(TransactionType.WITHDRAW, amount));
+        transactions.add(new Transaction(TransactionType.WITHDRAW, amount));
     }
 
     public double getBalance() {
