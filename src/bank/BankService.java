@@ -27,6 +27,10 @@ public class BankService {
         System.out.println("withdraw successfully!");
     }
 
+    public void withdraw(int accNo, double amount){
+        getAccount(accNo).withdraw(amount);
+        System.out.println("withdraw successfully !");
+    }
     public void checkBalance(int accNo){
         System.out.println("Balance: "+getAccount(accNo).getBalance());
     }
