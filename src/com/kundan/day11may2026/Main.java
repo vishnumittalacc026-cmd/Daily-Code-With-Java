@@ -4,15 +4,27 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-        //reverse the string
+//        //reverse the string
+//
+//        String str = "hello";
+//        String reversed = "";
+//
+//        for(int i = str.length()-1; i>=0; i--){
+//            reversed += str.charAt(i);
+//        }
+//        System.out.println(reversed);
 
-        String str = "hello";
-        String reversed = "";
+        //palindrome string
 
-        for(int i = str.length()-1; i>=0; i--){
-            reversed += str.charAt(i);
+        String str = "madam";
+
+        String reversed = new StringBuilder(str).reverse().toString();
+
+        if(str.equals(reversed)){
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("No Palindrome");
         }
-        System.out.println(reversed);
         //end timer
         long endTimer = System.nanoTime();
 
