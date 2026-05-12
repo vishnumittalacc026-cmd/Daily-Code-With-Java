@@ -1,11 +1,30 @@
 package com.kundan.day12may2026;
 
 public class Main {
+    //Inorder Traversal
     static void inorder(Node root){
         if(root != null){
             inorder(root.left);
             System.out.print(root.data+" ");
             inorder(root.right);
+        }
+    }
+
+    //Preorder Traversal
+    static void preorder(Node root){
+        if(root != null){
+            System.out.print(root.data+" ");
+            preorder(root.left);
+            preorder(root.right);
+        }
+    }
+
+    //Postorder Traversal
+    static void postorder(Node root){
+        if(root != null){
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data+" ");
         }
     }
     public static void main(String[] args){
@@ -22,6 +41,14 @@ public class Main {
 
         System.out.println("Inorder Traversal: ");
         inorder(root);
+        System.out.println();
+
+        System.out.println("Preorder Traversal: ");
+        preorder(root);
+        System.out.println();
+
+        System.out.println("Postorder Traversal: ");
+        postorder(root);
         System.out.println();
         //end timer
         long endTimer = System.nanoTime();
