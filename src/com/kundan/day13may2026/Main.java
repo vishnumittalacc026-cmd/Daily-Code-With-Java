@@ -8,6 +8,22 @@ public class Main {
             inorder(root.right);
         }
     }
+
+    static void preorder(Node root){
+        if(root != null){
+            System.out.print(root.data+" ");
+            preorder(root.left);
+            preorder(root.right);
+        }
+    }
+
+    static void postorder(Node root){
+        if(root != null){
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data+" ");
+        }
+    }
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
@@ -25,6 +41,14 @@ public class Main {
 
         System.out.println("Inorder Traversal of Tree data structure: ");
         inorder(root);
+        System.out.println();
+
+        System.out.println("Preorder Traversal of Tree data structure: ");
+        preorder(root);
+        System.out.println();
+
+        System.out.println("Postorder Traversal of Tree data structure: ");
+        postorder(root);
         System.out.println();
 
         //end timer
