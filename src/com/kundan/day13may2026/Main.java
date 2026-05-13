@@ -1,6 +1,13 @@
 package com.kundan.day13may2026;
 
 public class Main {
+    static void inorder(Node root){
+        if(root != null){
+            inorder(root.left);
+            System.out.print(root.data+" ");
+            inorder(root.right);
+        }
+    }
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
@@ -15,6 +22,10 @@ public class Main {
         root.right.right = new Node(7);
 
         System.out.println("Tree created");
+
+        System.out.println("Inorder Traversal of Tree data structure: ");
+        inorder(root);
+        System.out.println();
 
         //end timer
         long endTimer = System.nanoTime();
