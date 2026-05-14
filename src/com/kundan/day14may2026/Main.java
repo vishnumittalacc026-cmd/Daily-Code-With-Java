@@ -4,7 +4,19 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        Node root = new Node(1);
 
+        root.left = new Node(3);
+        root.right = new Node(8);
+
+        root.left.left = new Node(9);
+        root.left.right = new Node(11);
+
+        root.right.left = new Node(19);
+        root.right.right = new Node(900);
+
+        LevelOrderTraversal traversal = new LevelOrderTraversal();
+        traversal.levelOrder(root);
         //end timer
         long endTimer = System.nanoTime();
 
