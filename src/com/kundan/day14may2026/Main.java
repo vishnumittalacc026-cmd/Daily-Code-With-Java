@@ -17,6 +17,7 @@ public class Main {
 
         LevelOrderTraversal traversal = new LevelOrderTraversal();
         traversal.levelOrder(root);
+        System.out.println();
         //end timer
         long endTimer = System.nanoTime();
 
