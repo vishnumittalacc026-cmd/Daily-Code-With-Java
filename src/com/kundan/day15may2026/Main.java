@@ -4,6 +4,19 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        BSTInsertion bst = new BSTInsertion();
+        Node root = null;
+
+        root = bst.insert(root, 50);
+        bst.insert(root,10);
+        bst.insert(root,11);
+        bst.insert(root,70);
+        bst.insert(root,12);
+        bst.insert(root,100);
+
+        System.out.println("Inorder Traversal: ");
+        bst.inorder(root);
+        System.out.println();
 
         //end Timer
         long endTimer = System.nanoTime();
