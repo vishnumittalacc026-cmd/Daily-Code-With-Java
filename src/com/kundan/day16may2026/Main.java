@@ -5,6 +5,8 @@ public class Main {
         //start timer
         long startTimer = System.nanoTime();
         BSTInsertion bst = new BSTInsertion();
+        Traversal traversal = new Traversal();
+
         Node root = null;
 
         root = bst.insert(root, 50);
@@ -16,7 +18,7 @@ public class Main {
         bst.insert(root,99);
 
         System.out.println("Inorder Traversal: ");
-        bst.inorder(root);
+        traversal.inorder(root);
         System.out.println();
 
 
