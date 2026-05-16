@@ -6,6 +6,7 @@ public class Main {
         long startTimer = System.nanoTime();
         BSTInsertion bst = new BSTInsertion();
         Traversal traversal = new Traversal();
+        BSTSearch bstSearch = new BSTSearch();
 
         Node root = null;
 
@@ -16,11 +17,26 @@ public class Main {
         bst.insert(root,12);
         bst.insert(root,100);
         bst.insert(root,99);
+        bst.insert(root, 40);
 
         System.out.println("Inorder Traversal: ");
         traversal.inorder(root);
         System.out.println();
 
+        System.out.println("Search Results:");
+        int key = 40;
+        if(bstSearch.search(root,key)){
+            System.out.println(key+ " found in BST");
+        } else {
+            System.out.println(key+ " not found in BST");
+        }
+
+         key = 41;
+        if(bstSearch.search(root,key)){
+            System.out.println(key+ " found in BST");
+        } else {
+            System.out.println(key+ " not found in BST");
+        }
 
         //end timer
         long endTimer = System.nanoTime();
