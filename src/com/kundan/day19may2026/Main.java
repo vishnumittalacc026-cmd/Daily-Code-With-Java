@@ -1,4 +1,4 @@
-package com.kundan.day19may2026;
+package com.kundan.day19may2026;;
 
 public class Main {
     public static void main(String[] args){
@@ -18,6 +18,9 @@ public class Main {
 
         int NoOfNode = BinaryTreeCount.count(root);
         System.out.println("Number of nodes in the tree: "+NoOfNode);
+
+        int NoOfCountLeafNodes = BinaryTreeCountLeafNodes.countLeaf(root);
+        System.out.println("No of count of leaf nodes: "+NoOfCountLeafNodes);
         //end timer
         long endTimer = System.nanoTime();
 
