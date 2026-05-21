@@ -14,7 +14,6 @@ public class Main {
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
-        node4.next = node2;
 
         boolean result = DetectCycle.hasCycle(node1);
         System.out.println("Cycle detected: "+result);
