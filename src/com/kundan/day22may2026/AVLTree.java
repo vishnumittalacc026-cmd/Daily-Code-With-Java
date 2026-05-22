@@ -77,6 +77,14 @@ public class AVLTree {
 
         return node;
     }
+
+    AVLNode minValueNode(AVLNode node) {
+        AVLNode current = node;
+        while (current.left != null)
+            current = current.left;
+        return current;
+    }
+
     void inorder(AVLNode node){
         if(node != null){
             inorder(node.left);

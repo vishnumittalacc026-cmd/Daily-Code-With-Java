@@ -4,6 +4,21 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        AVLTree tree = new AVLTree();
+
+        tree.root = tree.insert(tree.root, 10);
+        tree.root = tree.insert(tree.root,11);
+        tree.root = tree.insert(tree.root, 12);
+        tree.root = tree.insert(tree.root,13);
+        tree.root = tree.insert(tree.root, 14);
+        tree.root = tree.insert(tree.root, 15);
+
+        System.out.println("Inoreder traversal of AVL tree: ");
+        tree.inorder(tree.root);
+
+//        tree.root = tree.delete(tree.root);
+//        System.out.println("After deleting 13:");
+//        tree.inorder(tree.root);
 
         //end timer
         long endTimer = System.nanoTime();
