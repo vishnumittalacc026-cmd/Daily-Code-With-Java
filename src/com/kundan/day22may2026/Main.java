@@ -16,9 +16,9 @@ public class Main {
         System.out.println("Inoreder traversal of AVL tree: ");
         tree.inorder(tree.root);
 
-//        tree.root = tree.delete(tree.root);
-//        System.out.println("After deleting 13:");
-//        tree.inorder(tree.root);
+        tree.root = tree.delete(tree.root,11);
+        System.out.println("\nAfter deleting 13:");
+        tree.inorder(tree.root);
 
         //end timer
         long endTimer = System.nanoTime();
