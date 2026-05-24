@@ -1,11 +1,11 @@
 package com.kundan.day24may2026;
 
 public class Node {
-    int key, heigh;
-    Node left, height;
+    int key, height;
+    Node left, right;
 
     public Node(int key){
         this.key = key;
-        this.heigh = 1;
+        this.height = 1;
     }
 }
