@@ -1,4 +1,4 @@
-package com.kundan.day31may2026;
+package com.kundan.day30may2026;
 
 public class Node {
     int data;

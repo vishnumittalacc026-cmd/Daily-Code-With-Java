@@ -1,10 +1,13 @@
-package com.kundan.day31may2026;
+package com.kundan.day30may2026;
 
 public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
-
+        LinkedList lst = new LinkedList();
+        lst.insert(9);
+        lst.insert(1900);
+        lst.traverse();
         //end timer
         long endTimer = System.nanoTime();
 
