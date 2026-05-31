@@ -5,6 +5,7 @@ public class Main {
         //start time
         long startTimer = System.nanoTime();
         LinkedList lst = new LinkedList();
+        LinkedListInsertAtPosition lstp = new LinkedListInsertAtPosition();
 
         lst.insert(5);
         lst.insert(3);
@@ -15,6 +16,9 @@ public class Main {
         lst.traverse();
 
         lst.insertAtBeginning(4);
+        lst.traverse();
+
+        lstp.insertAtPosition(lst,11, 3);
         lst.traverse();
         //end time
         long endTimer = System.nanoTime();
