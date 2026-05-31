@@ -16,6 +16,14 @@ public class LinkedList {
         }
         temp.next = newNode;
     }
+
+    //insert at beginning
+    public void insertAtBeginning(int data){
+        Node newNode = new Node(data);
+
+        newNode.next = head;
+        head = newNode;
+    }
     public  void traverse(){
         Node temp = head;
 

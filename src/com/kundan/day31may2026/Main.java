@@ -13,6 +13,9 @@ public class Main {
         lst.insert(9);
 
         lst.traverse();
+
+        lst.insertAtBeginning(4);
+        lst.traverse();
         //end time
         long endTimer = System.nanoTime();
 
