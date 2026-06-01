@@ -37,4 +37,17 @@ public class LinkedList {
         }
         head = head.next;
     }
+
+    //delete from the end
+    public void deleteFromEnd(){
+        if(head == null || head.next == null){
+            head = null;
+            return;
+        }
+        Node temp = head;
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
 }

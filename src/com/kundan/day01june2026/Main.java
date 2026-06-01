@@ -9,10 +9,17 @@ public class Main {
         lst.insertNode(9);
         lst.insertNode(8);
         lst.insertNode(1);
+        lst.insertNode(4);
+        lst.insertNode(3);
+        lst.insertNode(7);
+        lst.insertNode(6);
 
         lst.traverse();
 
         lst.deleteFirst();
+        lst.traverse();
+
+        lst.deleteFromEnd();
         lst.traverse();
         //end timer
         long endTimer = System.nanoTime();
