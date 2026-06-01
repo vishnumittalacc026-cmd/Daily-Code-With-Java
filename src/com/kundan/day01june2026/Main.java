@@ -11,6 +11,9 @@ public class Main {
         lst.insertNode(1);
 
         lst.traverse();
+
+        lst.deleteFirst();
+        lst.traverse();
         //end timer
         long endTimer = System.nanoTime();
 

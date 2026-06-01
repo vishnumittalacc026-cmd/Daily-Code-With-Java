@@ -28,4 +28,13 @@ public class LinkedList {
         }
         System.out.println("EndOfLinkedList");
     }
+
+    //delete first
+    public void deleteFirst(){
+        if(head == null){
+            System.out.println("list is empty");
+            return;
+        }
+        head = head.next;
+    }
 }
