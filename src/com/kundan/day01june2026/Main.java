@@ -21,6 +21,8 @@ public class Main {
 
         lst.deleteFromEnd();
         lst.traverse();
+
+        System.out.println(lst.search(4));
         //end timer
         long endTimer = System.nanoTime();
 
