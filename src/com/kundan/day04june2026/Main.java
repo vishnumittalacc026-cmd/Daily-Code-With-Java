@@ -19,6 +19,7 @@ public class Main {
         //print values of Node in the LinkedList
         lst.printLinkedList();
         //print the middle value
+        System.out.println("middle node of the given LinkedList: "+lst.middleNode());
         //end timer
         long endTimer = System.nanoTime();
 
