@@ -1,21 +1,22 @@
 package com.kundan.day05june2026;
 
-import com.kundan.day04june2026.LinkedList;
-
 public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
         LinkedList lst = new LinkedList();
 
-        lst.insertNode(9);
-        lst.insertNode(8);
-        lst.insertNode(6);
-        lst.insertNode(4);
-        lst.insertNode(1);
-        lst.insertNode(5);
+        lst.insertData(9);
+        lst.insertData(8);
+        lst.insertData(6);
+        lst.insertData(4);
+        lst.insertData(1);
+        lst.insertData(5);
 
-
+        if(lst.loopDetection()){
+            System.out.println("Loop Dectected: ");
+        } else
+            System.out.println("there is no loop exist in the Linked List");
         //end timer
         long endTimer = System.nanoTime();
 
