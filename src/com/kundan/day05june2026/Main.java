@@ -22,7 +22,7 @@ public class Main {
         }
         temp.next = lst.head.next;
         if(lst.loopDetection()){
-            System.out.println("Loop Dectected: ");
+            System.out.println("Loop Detected: ");
         } else
             System.out.println("there is no loop exist in the Linked List");
         //end timer
