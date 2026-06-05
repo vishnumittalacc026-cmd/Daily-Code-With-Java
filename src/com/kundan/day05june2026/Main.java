@@ -12,7 +12,15 @@ public class Main {
         lst.insertData(4);
         lst.insertData(1);
         lst.insertData(5);
+        lst.insertData(7);
+        lst.insertData(4);
 
+
+        Node temp = lst.head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = lst.head.next;
         if(lst.loopDetection()){
             System.out.println("Loop Dectected: ");
         } else
