@@ -1,6 +1,5 @@
 package com.kundan.day07june2026;
 
-record Employee (String name, int age){}
 public class Main {
     public static void main(String[] args){
         //start timer
