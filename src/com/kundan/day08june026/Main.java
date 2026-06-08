@@ -4,7 +4,13 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        StackArray stack = new StackArray(5);
 
+        stack.push(10);
+        stack.push(11);
+        stack.push(14);
+
+        stack.display();
         //end timer
         long endTimer = System.nanoTime();
 

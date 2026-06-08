@@ -33,7 +33,8 @@ public class StackArray {
         System.out.println("Stack Elements: ");
 
         for(int i= top; i >= 0; i--){
-            System.out.println(stack[i]);
+            System.out.print(stack[i]+" ");
         }
+        System.out.println();
     }
 }
