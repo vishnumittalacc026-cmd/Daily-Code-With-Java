@@ -5,6 +5,14 @@ public class Main {
         //start timer
         long startTimer = System.nanoTime();
 
+        StackLinkedList stack = new StackLinkedList();
+
+        stack.push(1);
+        stack.push(8);
+        stack.push(9);
+        stack.push(10);
+
+        stack.display();
         //end timer
         long endTimer = System.nanoTime();
 
