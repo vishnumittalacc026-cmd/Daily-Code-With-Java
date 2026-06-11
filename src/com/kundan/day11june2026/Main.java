@@ -13,7 +13,16 @@ public class Main {
        stack.push(14);
 
        stack.display();
-      //end timer
+
+       System.out.println("top element: "+stack.peek());
+       System.out.println("stack size: "+ stack.size());
+
+       System.out.println("Popped: "+stack.pop());
+       stack.display();
+       System.out.println("now top element is: "+stack.peek());
+       stack.display();
+
+        //end timer
       long endTimer = System.nanoTime();
 
       //program time
