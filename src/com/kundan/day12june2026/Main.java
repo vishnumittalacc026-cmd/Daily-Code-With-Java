@@ -2,6 +2,7 @@ package com.kundan.day12june2026;
 
 import java.util.LinkedHashSet;
 import java.util.SequencedCollection;
+import java.util.SequencedSet;
 
 public class Main {
     public static void main(String[] args){
@@ -26,6 +27,18 @@ public class Main {
         System.out.println("After Removing Oldest: "+broserHistory);
         System.out.println("Reverse History : "+broserHistory.reversed());
 
+
+        SequencedSet<String> set = new LinkedHashSet<>();
+
+        set.add("Java");
+        set.add("Spring");
+        set.add("AWS");
+        set.add("Docker");
+
+        System.out.println(set.getFirst());
+        System.out.println(set.getLast());
+
+        System.out.println(set.reversed());
         //end timer
         long endTimer = System.nanoTime();
 
