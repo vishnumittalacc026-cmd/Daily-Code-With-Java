@@ -1,0 +1,46 @@
+package com.kundan.day14june2026;
+
+import java.util.LinkedList;
+import java.util.SequencedCollection;
+
+public class Main {
+    public static void main(String[] args){
+        //start timer
+        long startTime = System.nanoTime();
+
+        SequencedCollection<String> tickets = new LinkedList<>();
+
+        tickets.addLast("T101");
+        tickets.addLast("T102");
+        tickets.addLast("T103");
+        tickets.addLast("T104");
+
+        //urgent ticket
+        tickets.addFirst("T100");
+
+        //new ticket
+        tickets.addLast("T105");
+
+        System.out.println("All Tickets: ");
+        System.out.println(tickets);
+
+        String oldest = tickets.removeFirst();
+        System.out.println("\nProcessed oldest: "+oldest);
+
+        String newest = tickets.removeLast();
+        System.out.println("Processed Newest: "+newest);
+
+        System.out.println("\nRemaining Tickets: ");
+        System.out.println(tickets);
+
+        System.out.println("\nReverse Order: ");
+        System.out.println(tickets.reversed());
+        //end timer
+        long endTimer = System.nanoTime();
+
+        //program time
+        long programTime = (endTimer - startTime)/1_000_000;
+
+        System.out.println("program time: "+programTime+" ms");
+    }
+}
