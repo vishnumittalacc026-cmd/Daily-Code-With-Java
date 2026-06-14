@@ -1,9 +1,6 @@
 package com.kundan.day14june2026;
 
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.SequencedCollection;
-import java.util.SequencedSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
@@ -41,19 +38,36 @@ public class Main {
         //before java 21 getting first/last elements from a LinkedHashSet
         //was not straightforward.
 
-        SequencedSet<String> set = new LinkedHashSet<>();
+//        SequencedSet<String> set = new LinkedHashSet<>();
+//
+//        set.add("java");
+//        set.add("spring");
+//        set.add("aws");
+//        set.add("docker");
+//        set.add("Ansible");
+//        set.add("terraform");
+//
+//        System.out.println(set.getFirst());
+//        System.out.println(set.getLast());
+//
+//        System.out.println(set.reversed());
 
-        set.add("java");
-        set.add("spring");
-        set.add("aws");
-        set.add("docker");
-        set.add("Ansible");
-        set.add("terraform");
+        //SequencedMap Example
 
-        System.out.println(set.getFirst());
-        System.out.println(set.getLast());
+        SequencedMap<Integer, String> employees = new LinkedHashMap<>();
 
-        System.out.println(set.reversed());
+        employees.put(101, "John");
+        employees.put(102,"Narayan sir");
+        employees.put(103, "David");
+        employees.put(104, "arun bhai");
+        employees.put(105, "aditya bhai");
+        employees.put(106,"harshit bhai");
+
+        System.out.println(employees.firstEntry());
+        System.out.println(employees.lastEntry());
+        System.out.println(employees.reversed());
+
+
         //end timer
         long endTimer = System.nanoTime();
 
