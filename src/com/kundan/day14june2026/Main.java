@@ -1,40 +1,59 @@
 package com.kundan.day14june2026;
 
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.SequencedCollection;
+import java.util.SequencedSet;
 
 public class Main {
     public static void main(String[] args){
         //start timer
         long startTime = System.nanoTime();
 
-        SequencedCollection<String> tickets = new LinkedList<>();
+//        SequencedCollection<String> tickets = new LinkedList<>();
+//
+//        tickets.addLast("T101");
+//        tickets.addLast("T102");
+//        tickets.addLast("T103");
+//        tickets.addLast("T104");
 
-        tickets.addLast("T101");
-        tickets.addLast("T102");
-        tickets.addLast("T103");
-        tickets.addLast("T104");
+//        //urgent ticket
+//        tickets.addFirst("T100");
+//
+//        //new ticket
+//        tickets.addLast("T105");
+//
+//        System.out.println("All Tickets: ");
+//        System.out.println(tickets);
+//
+//        String oldest = tickets.removeFirst();
+//        System.out.println("\nProcessed oldest: "+oldest);
+//
+//        String newest = tickets.removeLast();
+//        System.out.println("Processed Newest: "+newest);
+//
+//        System.out.println("\nRemaining Tickets: ");
+//        System.out.println(tickets);
+//
+//        System.out.println("\nReverse Order: ");
+//        System.out.println(tickets.reversed());
 
-        //urgent ticket
-        tickets.addFirst("T100");
+        //before java 21 getting first/last elements from a LinkedHashSet
+        //was not straightforward.
 
-        //new ticket
-        tickets.addLast("T105");
+        SequencedSet<String> set = new LinkedHashSet<>();
 
-        System.out.println("All Tickets: ");
-        System.out.println(tickets);
+        set.add("java");
+        set.add("spring");
+        set.add("aws");
+        set.add("docker");
+        set.add("Ansible");
+        set.add("terraform");
 
-        String oldest = tickets.removeFirst();
-        System.out.println("\nProcessed oldest: "+oldest);
+        System.out.println(set.getFirst());
+        System.out.println(set.getLast());
 
-        String newest = tickets.removeLast();
-        System.out.println("Processed Newest: "+newest);
-
-        System.out.println("\nRemaining Tickets: ");
-        System.out.println(tickets);
-
-        System.out.println("\nReverse Order: ");
-        System.out.println(tickets.reversed());
+        System.out.println(set.reversed());
         //end timer
         long endTimer = System.nanoTime();
 
