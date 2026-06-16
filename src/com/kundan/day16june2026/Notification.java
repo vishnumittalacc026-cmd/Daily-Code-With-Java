@@ -1,4 +1,6 @@
 package com.kundan.day16june2026;
 
-public interface Notification {
+sealed  interface Notification
+permits Email,SMS,Push {
+
 }
