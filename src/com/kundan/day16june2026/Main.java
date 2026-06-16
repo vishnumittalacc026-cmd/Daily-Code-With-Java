@@ -15,5 +15,6 @@ public class Main {
         long programTime = (endTimer-startTimer)/1_000_000;
 
         System.out.println("program time: "+programTime+" ms");
+        System.out.println("this line is from eclipse");
     }
 }
