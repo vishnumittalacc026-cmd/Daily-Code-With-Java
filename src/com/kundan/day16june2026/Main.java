@@ -4,6 +4,9 @@ public class Main {
     public static void main(String[] args){
         //start timer
         long startTimer = System.nanoTime();
+        System.out.println(NotificationService.send(new Email("test@gmail.com")));
+        System.out.println(NotificationService.send(new SMS("12345678")));
+        System.out.println(NotificationService.send(new Push("Device123")));
 
         //end timer
         long endTimer = System.nanoTime();
